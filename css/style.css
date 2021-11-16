@@ -1,0 +1,139 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 25px 25px 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}
+
+body main {
+  padding: 20px 25px;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 2em;
+  -ms-grid-columns: (1fr)[9];
+      grid-template-columns: repeat(9, 1fr);
+  -ms-grid-rows: auto auto auto;
+      grid-template-rows: auto auto auto;
+      grid-template-areas: ". . . . h . . . ." ". . . . f . . . ." ". . . . c . . . .";
+}
+
+body header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  grid-area: h;
+}
+
+body form {
+  -ms-grid-row: 2;
+  -ms-grid-column: 5;
+  grid-area: f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body form input[type=text] {
+  width: 250px;
+  height: 20px;
+  padding: 2px 5px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+body form button {
+  background: #4CAF50;
+  width: 50px;
+  color: #fff;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+body .todo-container {
+  -ms-grid-row: 3;
+  -ms-grid-column: 5;
+  grid-area: c;
+  text-align: left;
+}
+
+body .todo-container li {
+  list-style: none;
+  width: 400px;
+  border: 1px solid #ccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-right: auto;
+}
+
+body .todo-container li :nth-child(3) {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+body .todo-container li input[type=checkbox] {
+  margin: 15px 15px;
+  cursor: pointer;
+}
+
+body .todo-container li input[type=text] {
+  width: 250px;
+  height: 20px;
+  padding: 2px 5px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+body .todo-container li span.todo-item {
+  width: 400px;
+  margin: auto;
+  cursor: pointer;
+}
+
+body .todo-container li span.todo-item.checked-task {
+  text-decoration: line-through;
+}
+
+body .todo-container li button {
+  width: 45px;
+  height: 45px;
+  color: #fff;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+body .todo-container li button.trash-btn {
+  background-color: red;
+}
+
+body .todo-container li button.save-btn {
+  background-color: #4CAF50;
+}
+
+body .fa-trash, body .fa-check, body .fa-save {
+  pointer-events: none;
+}
+/*# sourceMappingURL=style.css.map */
