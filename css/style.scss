@@ -2,14 +2,13 @@
     margin: 0;
     padding: 0;
 }
+@import "constants";
 
 body {
-    padding: 25px 25px 0;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
+    padding: 25px 0;
+    @include standard-text();
 
     main {
-        padding: 20px 25px;
         background-color: #fff;
         color: #000;
         text-align: center;
@@ -22,98 +21,86 @@ body {
             ". . . . h . . . ."
             ". . . . f . . . ."
             ". . . . c . . . .";
-    }
 
-    header {
-        grid-area: h;
-    }
-
-    form {
-        grid-area: f;
-        display: flex;
-        justify-content: center;
-
-        input[type=text] {
-            width: 250px;
-            height: 20px;
-            padding: 2px 5px;
-            font-family: 'Open Sans', sans-serif;
-            font-size: 16px;
+        header {
+            grid-area: h;
         }
 
-        button {
-            background: #4CAF50;
-            width: 50px;
-            color: #fff;
-            border: none;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            cursor: pointer;
-        }
-    }
-
-    .todo-container {
-        grid-area: c;
-        text-align: left;
-
-        li {
-            list-style: none;
-            width: 400px;
-            border: 1px solid #ccc;
+        form {
+            grid-area: f;
             display: flex;
-            flex-direction: row;
-            margin-right: auto;
+            justify-content: center;
 
-            :nth-child(3) { order: 2; }
-            
-            input[type=checkbox] {
-                margin: 15px 15px;
-                cursor: pointer;
-            }
-        
             input[type=text] {
                 width: 250px;
                 height: 20px;
                 padding: 2px 5px;
-                font-family: 'Open Sans', sans-serif;
-                font-size: 16px
-            }
-
-            span.todo-item {
-                width: 400px;
-                margin: auto;
-                cursor: pointer;
-            }
-
-            span.todo-item.checked-task {
-                text-decoration: line-through;
+                @include standard-text();
             }
 
             button {
-                width: 45px;
-                height: 45px;
+                @include standard-button();
+                background: #467ab2;
+                width: 50px;
                 color: #fff;
-                border: none;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-                cursor: pointer;
-            }
-
-            button.trash-btn {
-                background-color: red;
-            }
-
-            button.save-btn {
-                background-color: #4CAF50;
             }
         }
-    }
 
-    .fa-trash, .fa-check, .fa-save {
-        pointer-events: none;
+        .todo-container {
+            grid-area: c;
+            text-align: left;
+
+            li {
+                list-style: none;
+                width: 400px;
+                border: 1px solid #ccc;
+                display: flex;
+                flex-direction: row;
+                margin-right: auto;
+
+                :nth-child(3) { order: 2; }
+                
+                input[type=checkbox] {
+                    margin: 15px 15px;
+                    cursor: $pointer;
+                }
+            
+                input[type=text] {
+                    width: 250px;
+                    height: 20px;
+                    padding: 2px 5px;
+                    @include standard-text();
+                }
+                
+                span.todo-item {
+                    width: 265px;
+                    margin: auto;
+                    cursor: $pointer;
+                }
+
+                span.todo-item.checked-task {
+                    text-decoration: line-through;
+                }
+
+                button {
+                    @include standard-button();
+                    width: 45px;
+                    height: 45px;
+                    background-color: #fff;
+                }
+
+                .trash-btn {
+                    color: red;
+                }
+
+                .save-btn {
+                    color: #4CAF50;
+                }
+            }
+        }
+
+        .fa-trash, .fa-check, .fa-save {
+            pointer-events: none;
+        }
     }
 }
